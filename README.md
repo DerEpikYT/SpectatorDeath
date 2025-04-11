@@ -1,5 +1,5 @@
 # SpectatorDeath
-A PocketMine-MP plugin that adds a customizable respawn countdown when a player dies — complete with sounds, messages, and configurable gamemode!
+A PocketMine-MP plugin that adds a System when a player dies — complete with sounds, messages, and configurable gamemode!
 
 🔧 Features
 ⏱️ Respawn Countdown – Shows a countdown every second after death (e.g. You will respawn in 5...)
