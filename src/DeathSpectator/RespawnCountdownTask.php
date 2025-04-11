@@ -35,13 +35,13 @@ class RespawnCountdownTask extends Task {
         } else {
             $this->player->sendMessage("Respawning...");
             switch ($this->gamemode) {
-                case ("creative" or "CREATIVE"):
+                case "CREATIVE":
                     $this->player->setGamemode(GameMode::CREATIVE());
                     break;
-                case ("adventure" or "ADVENTURE"):
+                case "ADVENTURE":
                     $this->player->setGamemode(GameMode::ADVENTURE());
                     break;
-                case ("survival" or "SURVIVAL"):
+                case "SURVIVAL":
                     $this->player->setGamemode(GameMode::SURVIVAL());
                     break;
                 default:
