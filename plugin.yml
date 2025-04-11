@@ -1,0 +1,5 @@
+name: "DeathSpectator"
+version: 1.0.0
+main: DeathSpectator\Main
+author: DerEpikYT
+api: [5.0.0]

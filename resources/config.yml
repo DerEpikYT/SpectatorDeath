@@ -1,0 +1,12 @@
+# THIS IS THE CONFIG FOR THE DEATH MANAGEMENT
+
+# TYPE HERE THE DEATH MESSAGE WHEN A PLAYER DIES
+# INFO: use $player for who died in the message.
+deathmessage: "$player Died"
+# Type the gamemode you want if the Player Respawns
+# GAMEMODES: 
+# INFO: Type in the Gamemodes in capital letters
+# CREATIVE
+# SURVIVAL
+# ADVENTURE
+respawngamemode: "SURVIVAL"
