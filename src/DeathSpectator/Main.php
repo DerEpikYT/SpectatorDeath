@@ -14,19 +14,22 @@ class Main extends PluginBase implements Listener {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
 
-    public function onPlayerDeath(PlayerDeathEvent $event): void {
-        $player = $event->getPlayer();
-        $playerName = $player->getName();
-
-        $messageTemplate = $this->getConfig()->get("deathmessage");
-        $customMessage = str_replace("$player", $playerName, $messageTemplate);
-
-        $event->setDeathMessage($customMessage);
-        $respawnTime = 5;
-        $player->setGamemode(GameMode::SPECTATOR());
-
-        // Countdown starten
-        $gamemode = $this->getConfig()->get("respawngamemode");
-        $this->getScheduler()->scheduleRepeatingTask(new RespawnCountdownTask($player, $respawnTime, $gamemode), 20);
+    
+    public function onDamage(EntityDamageEvent $event){
+        $entity = $event->getEntity();
+        if($entity instanceof Player){
+            if ($entity instanceof Player) {
+                $finalDamage = $event->getFinalDamage();
+                if ($entity->getHealth() - $finalDamage <= 0) {
+                    $event->cancel();
+                    $entity->respawn();
+                    $entity->setHealth($entity->getMaxHealth());
+                    $entity->setGamemode(GameMode::SPECTATOR());
+                    $respawnTime = 5;
+                    $gamemode = $this->getConfig()->get("respawngamemode");
+                    $this->getScheduler()->scheduleRepeatingTask(new RespawnCountdownTask($entity, $respawnTime, $gamemode), 20);
+                }
+            }
+        }
     }
 }
