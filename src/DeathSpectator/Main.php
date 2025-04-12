@@ -1,5 +1,5 @@
 <?php
-namespace myplugin;
+namespace DeathSpectator;
 
 use DeathSpectator\RespawnCountdownTask;
 use pocketmine\player\GameMode;
