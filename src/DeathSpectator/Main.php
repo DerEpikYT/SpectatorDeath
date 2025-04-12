@@ -6,7 +6,7 @@ use pocketmine\player\GameMode;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\player\Player
+use pocketmine\player\Player;
 
 class Main extends PluginBase implements Listener {
 
