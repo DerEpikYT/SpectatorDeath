@@ -5,7 +5,7 @@ use DeathSpectator\RespawnCountdownTask;
 use pocketmine\player\GameMode;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\entity\EntityDamageEvent;
 
 class Main extends PluginBase implements Listener {
 
