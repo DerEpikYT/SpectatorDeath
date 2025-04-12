@@ -20,7 +20,7 @@ class Main extends PluginBase implements Listener {
         $entity = $event->getEntity();
         if($entity instanceof Player){
             $finalDamage = $event->getFinalDamage();
-            if ($entity->getHealth() - $finalDamage = 0) {
+            if ($entity->getHealth() - $finalDamage <= 0) {
                     $event->cancel();
                     $entity->respawn();
                     $entity->setHealth($entity->getMaxHealth());
