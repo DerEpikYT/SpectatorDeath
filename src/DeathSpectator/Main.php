@@ -19,14 +19,14 @@ class Main extends PluginBase implements Listener {
         $entity = $event->getEntity();
         if($entity instanceof Player){
             $finalDamage = $event->getFinalDamage();
-            if ($entity->getHealth() - $finalDamage <= 0) {
-                $event->cancel();
-                $entity->respawn();
-                $entity->setHealth($entity->getMaxHealth());
-                $entity->setGamemode(GameMode::SPECTATOR());
-                $respawnTime = 5;
-                $gamemode = $this->getConfig()->get("respawngamemode");
-                $this->getScheduler()->scheduleRepeatingTask(new RespawnCountdownTask($entity, $respawnTime, $gamemode), 20);
+            if ($entity->getHealth() - $finalDamage = 0) {
+                    $event->cancel();
+                    $entity->respawn();
+                    $entity->setHealth($entity->getMaxHealth());
+                    $entity->setGamemode(GameMode::SPECTATOR());
+                    $respawnTime = 5;
+                    $gamemode = $this->getConfig()->get("respawngamemode");
+                    $this->getScheduler()->scheduleRepeatingTask(new RespawnCountdownTask($entity, $respawnTime, $gamemode), 20);
             }
         }
     }
